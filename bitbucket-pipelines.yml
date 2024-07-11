@@ -1,0 +1,16 @@
+image: atlassian/default-image:2
+
+pipelines:
+  branches:
+    unlock_frontend_4.2:
+      - step:
+          name: Auto Clone and Push to Target Branch
+          script:
+            - apt-get update && apt-get install -y git
+            - git config --global user.email "dev@herkey.com"
+            - git config --global user.name "Developer"
+            - git clone https://x-token-auth:ATCTT3xFfGN0mCHtHvE8UhOzYNH0vsSrfKWnKfsXiBDprXHVbg2MwgJkj7btaC0PJmxw2d75BPItMvgOCsy76PBm_ELDQSnLaMsMwUTr-3r5cnnuxLetSYG50POp65STas507k1Gh6tLnV4j2lazRYQcyrQm8gU0mLeuncl3lD6UJKnok6l886Y=6FFA07D0@bitbucket.org/jfhdeveloper/unlock_frontend.git
+            - cd unlock_frontend
+            - git checkout unlock_mobile_4.2
+            - git pull origin unlock_frontend_4.2
+            - git push origin unlock_mobile_4.2

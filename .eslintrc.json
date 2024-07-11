@@ -1,0 +1,7 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    // Add the rule to disable the warning for the `img` tag's missing `alt` attribute
+    "@next/next/no-img-element": "off"
+  }
+}
